@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="30">
+	<Properties>
+		<Property name="LOG_PATTERN">%d{yyyy-MM-dd'T'HH:mm:ss.SSSZ} [%X] %p [%F] %m [%t]
+			%M%n</Property>
+	</Properties>
+
+	<Appenders>
+		<Console name="console" target="SYSTEM_OUT" follow="true">
+			<PatternLayout pattern="${LOG_PATTERN}" />
+		</Console>
+
+		<file name="MyFile" fileName="E:\my-first-rest-api-using-spring-mvc/logs/app.log" append="false">
+
+			<PatternLayout>
+				<Pattern>${LOG_PATTERN}</Pattern>
+			</PatternLayout>
+
+		</file>
+
+	</Appenders>
+
+	<Loggers>
+	
+		<Root level="info">
+		<AppenderRef ref="console" /> 
+			<!-- <AppenderRef ref="MyFile" /> -->
+		</Root>
+	</Loggers>
+</Configuration>
